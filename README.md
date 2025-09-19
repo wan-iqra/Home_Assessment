@@ -1,53 +1,53 @@
-# 🧪 Selenium UI Automation Framework  
-**PyTest-and-Selenium Demo — Finexus Home Assessment**  
-This is a demo project to showcase my skills in Python UI test automation using the **PyTest** and **Selenium** frameworks.
+# 🧪 Selenium UI Automation Framework with PyTest  
+### Finexus Home Assessment | Python + Selenium + PyTest + Allure
+
+This is a demo project showcasing my skills in UI test automation using the **Selenium WebDriver** and **PyTest** frameworks, with reporting via **pytest-html** and **Allure**.
 
 ---
 
 ## 📁 Project Structure
 
-```
+<details>
+<summary><strong>Click to expand</strong></summary>
+
+```plaintext
 .
 ├── config/
 │   └── config.ini              # Configuration file for credentials and URLs
 ├── pages/
-│   ├── login_page.py           # LoginPage class (Page Object)
-│   └── secure_area_page.py     # SecureAreaPage class (Page Object)
+│   ├── login_page.py           # LoginPage class (Page Object Model)
+│   └── secure_area_page.py     # SecureAreaPage class (Page Object Model)
 ├── tests/
 │   └── test_login.py           # Login test case using Page Objects
-├── html_reports/               # Auto-generated PyTest HTML reports
-├── main.py                     # Script to run tests and generate reports
-├── conftest.py                 # Pytest fixtures (e.g., WebDriver setup/teardown)
-├── requirements.txt
-└── README.md                   
+├── html_reports/               # PyTest HTML reports
+├── main.py                     # Entry point to run tests and generate reports
+├── conftest.py                 # PyTest fixtures (WebDriver setup/teardown)
+├── requirements.txt            # Project dependencies
+└── README.md                   # Project documentation
 ```
+
+</details>
 
 ---
 
 ## 🚀 Getting Started
 
-### ✅ 1. Clone the Repository
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/wan-iqra/Home_Assessment.git
-cd path-to-repo
+cd Home_Assessment
 ```
 
----
-
-### ✅ 2. Set Up the Environment
-
-Install the required dependencies:
+### 2️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
+### 3️⃣ Configure Environment
 
-### ✅ 3. Configure Credentials and URLs
-
-Edit the `config/config.ini` file (below are examples only, actual configuration is different):
+Edit the `config/config.ini` file:
 
 ```ini
 [credentials]
@@ -60,68 +60,77 @@ login_page = https://your-app.com/login
 
 ---
 
-## 🧪 Running Tests
+## 🧪 Running the Tests
 
-### 🔹 Option 1: Run main.py via HTML-PyTest 
+### ▶️ Option 1: Run `main.py` for HTML Reports
 
-Reminder: make sure the lines 10-25 in main.py are uncommented, while others commented
+- Ensure lines **10–25** in `main.py` are **uncommented**.
+- This will:
+  - Run all test cases
+  - Generate a report in `html_reports/`
+  - Automatically open the report in your browser
 
-<img width="656" height="410" alt="image" src="https://github.com/user-attachments/assets/1272e339-35e0-400f-972a-506e07e2a94a" />
+**Example HTML Report:**
 
-This will:
-
-- Run all test cases  
-- Generate an HTML report in `reports_html/`  
-- Automatically open the report in your default web browser
-
-HTML Report Example:
-
-<img width="652" height="544" alt="image" src="https://github.com/user-attachments/assets/0e5c4d73-e2f8-4bab-ba32-4b1469c5c1e3" />
+![HTML Report](https://github.com/user-attachments/assets/0e5c4d73-e2f8-4bab-ba32-4b1469c5c1e3)
 
 ---
 
-### 🔹 Option 2: Run with Allure Reporting (if configured)
+### ▶️ Option 2: Run with Allure Reporting (if installed)
 
-Reminder: make sure the lines 29-36 in main.py are uncommented, while others commented
+- Ensure lines **29–36** in `main.py` are **uncommented**.
+- This will:
+  - Run all test cases
+  - Generate an **interactive** Allure report in `reports_allure/`
+  - Automatically open the report
 
-<img width="575" height="225" alt="image" src="https://github.com/user-attachments/assets/2352a3c4-59d2-466b-a287-f1254a27f7ae" />
+> 🛠️ Prerequisites:  
+> - [Java SDK](https://www.oracle.com/java/technologies/downloads/)  
+> - [Allure CLI](https://docs.qameta.io/allure/#_installing_a_commandline)
 
-This will:
+---
 
-- Run all test cases  
-- Generate an interactive Allure report in `reports_allure/`  
-- Automatically open the report in your default web browser
+## ⚙️ Installing Allure CLI (via Scoop)
 
-> ✅ **Note:** Ensure JAVA SDK and Allure CLI are installed.
+Run the following commands in **PowerShell**:
 
-https://www.oracle.com/java/technologies/downloads/
-
-[Install Allure CLI](https://docs.qameta.io/allure/#_installing_a_commandline)
-
-If Allure CLI is not installed, try run these 2 commands in Powershell in scoop:
-```bash
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
-```
-Then install allure:
-```bash
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+iwr -useb get.scoop.sh | iex
 scoop install allure
 ```
-Check version of installed allure using allure --version:
 
-<img width="615" height="183" alt="image" src="https://github.com/user-attachments/assets/2ffeabec-3784-49e3-aac7-af8c894a50d4" />
+Check if Allure is installed:
 
-Allure Report Example:
+```bash
+allure --version
+```
 
-<img width="864" height="769" alt="image" src="https://github.com/user-attachments/assets/fc3f4db3-da53-4f26-b710-871a1201d0e6" />
+**Allure Report Example:**
+
+![Allure Report](https://github.com/user-attachments/assets/fc3f4db3-da53-4f26-b710-871a1201d0e6)
 
 ---
 
-## 🧰 Tools & Dependencies
+## 🧰 Tools & Technologies
 
-- Python 3.8+
-- Selenium
-- PyTest
-- pytest-html
-- Allure-pytest
-- configparser
+| Tool           | Description                         |
+|----------------|-------------------------------------|
+| Python 3.8+    | Programming language                |
+| Selenium       | Web automation framework            |
+| PyTest         | Python test framework               |
+| pytest-html    | HTML test report plugin             |
+| Allure-pytest  | Allure report plugin for PyTest     |
+| configparser   | INI file parsing                    |
+
+---
+
+## ✅ Final Notes
+
+- Screenshots in this README are for illustration only.
+- Make sure to update `config.ini` with your actual credentials and URLs.
+- If you encounter issues with reports not displaying, ensure dependencies and Java are correctly set up.
+
+---
+
+Happy Testing! 💻🧪
