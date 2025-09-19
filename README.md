@@ -92,7 +92,11 @@ This will:
 - Generate an interactive Allure report in `reports_allure/`  
 - Automatically open the report in your default web browser
 
-> ✅ **Note:** Ensure Allure CLI is installed. [Install Allure CLI](https://docs.qameta.io/allure/#_installing_a_commandline)
+> ✅ **Note:** Ensure JAVA SDK and Allure CLI are installed.
+
+https://www.oracle.com/java/technologies/downloads/
+
+[Install Allure CLI](https://docs.qameta.io/allure/#_installing_a_commandline)
 
 If Allure CLI is not installed, try run these 2 commands in Powershell in scoop:
 ```bash
