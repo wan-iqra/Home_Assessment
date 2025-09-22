@@ -17,5 +17,5 @@ class INV20250000023Page:
 
     def get_slip_join_plier(self):
         """get product slip joining plier"""
-        plier = self.driver.find_elements(*self.slip_joint_cell)[0]
+        plier = WebDriverWait(self.driver, 10).until(EC.presence_of_element_located(self.slip_joint_cell))
         return plier.text.strip()
